@@ -1,8 +1,8 @@
 <div
-  class="h-lvh border border-black flex"
+  class="h-lvh flex"
 >
   <aside
-    class="bg-[#F9FAFB] h-full w-1/3 border border-black flex justify-center pt-12"
+    class="bg-[#F9FAFB] h-full w-1/3 flex justify-center pt-12"
   >
     <app-logo></app-logo>
   </aside>
@@ -12,11 +12,11 @@
     <img
       src="/circle-bg.svg"
       alt="background-image"
-      class="index-1 translate-y-[-3%] border z-0 relative"
+      class="index-1 translate-y-[-3%] z-0 relative"
     >
 
     <div
-      class="z-10 border absolute flex flex-col items-center translate-y-[42%]"
+      class="z-10 absolute flex flex-col items-center translate-y-[33%] gap-4"
     >
       <lucide-icon
         name="circle-user"
@@ -24,7 +24,7 @@
       ></lucide-icon>
 
       <div
-        class="flex flex-col items-center gap-2"
+        class="flex flex-col items-center"
       >
         <span
           class="text-3xl font-semibold text-[#101828]"
@@ -34,28 +34,27 @@
         <p
           class="text-[#475467]"
         >Welcome Ya! Please set your information.</p>
-
-        <div
-          class="flex flex-col gap-3"
-        >
-          @for(prop of inputFieldsProperties; track prop.label){
-            <app-input-field
-              [label] = "prop.label"
-              [inputPlaceholder]="prop.placeholder"
-              [inputType]="prop.type"
-            ></app-input-field>
-          }
-        </div>
-        <div
-          class="flex gap-2"
-        >
-          @for (prop of buttonProperties; track prop.name){
-            <app-button
-              [buttonName]="prop.name"
-              [backgroundColor]= "prop.backgroundColor"
-            ></app-button>
-          }
-        </div>
+      </div>
+      <div
+        class="flex flex-col gap-3"
+      >
+        @for(prop of inputFieldsProperties; track prop.label){
+          <app-input-field
+            [label] = "prop.label"
+            [inputPlaceholder]="prop.placeholder"
+            [inputType]="prop.type"
+          ></app-input-field>
+        }
+      </div>
+      <div
+        class="flex gap-2 w-full justify-end"
+      >
+        @for (prop of buttonProperties; track prop.name){
+          <app-button
+            [buttonName]="prop.name"
+            [backgroundColor]= "prop.backgroundColor"
+          ></app-button>
+        }
       </div>
     </div>
   </aside>

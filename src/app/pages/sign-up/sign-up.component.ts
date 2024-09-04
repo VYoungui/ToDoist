@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LogoComponent} from "../../components/logo/logo.component";
 import {LucideAngularModule} from "lucide-angular";
 import {InputFieldComponent} from "../../components/input-field/input-field.component";
@@ -16,7 +16,9 @@ import {ButtonComponent} from "../../components/button/button.component";
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit{
+
+  passwordVisible = ''
 
   inputFieldsProperties = [
     {
@@ -29,6 +31,11 @@ export class SignUpComponent {
       label: "Email",
       type: "email",
       placeholder: "Email",
+    },
+    {
+      label: "Password",
+      type: "password",
+      placeholder: this.passwordVisible,
     },
   ]
 
@@ -44,4 +51,7 @@ export class SignUpComponent {
   ]
 
 
+  ngOnInit(){
+
+  }
 }
