@@ -16,13 +16,16 @@
     >
 
     <div
-      class="z-10 border absolute"
+      class="z-10 border absolute flex flex-col items-center translate-y-[42%]"
     >
       <lucide-icon
         name="circle-user"
+        size="64px"
       ></lucide-icon>
 
-      <div>
+      <div
+        class="flex flex-col items-center gap-2"
+      >
         <span
           class="text-3xl font-semibold text-[#101828]"
         >
@@ -31,6 +34,28 @@
         <p
           class="text-[#475467]"
         >Welcome Ya! Please set your information.</p>
+
+        <div
+          class="flex flex-col gap-3"
+        >
+          @for(prop of inputFieldsProperties; track prop.label){
+            <app-input-field
+              [label] = "prop.label"
+              [inputPlaceholder]="prop.placeholder"
+              [inputType]="prop.type"
+            ></app-input-field>
+          }
+        </div>
+        <div
+          class="flex gap-2"
+        >
+          @for (prop of buttonProperties; track prop.name){
+            <app-button
+              [buttonName]="prop.name"
+              [backgroundColor]= "prop.backgroundColor"
+            ></app-button>
+          }
+        </div>
       </div>
     </div>
   </aside>
