@@ -3,6 +3,7 @@ import {LogoComponent} from "../../components/logo/logo.component";
 import {LucideAngularModule} from "lucide-angular";
 import {InputFieldComponent} from "../../components/input-field/input-field.component";
 import {ButtonComponent} from "../../components/button/button.component";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-sign-up',
@@ -12,13 +13,15 @@ import {ButtonComponent} from "../../components/button/button.component";
     LucideAngularModule,
     InputFieldComponent,
     ButtonComponent,
+    RouterOutlet,
+    RouterLink,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
 
-  passwordVisible = ''
+  passwordVisible !: boolean
 
   inputFieldsProperties = [
     {
@@ -34,8 +37,8 @@ export class SignUpComponent implements OnInit{
     },
     {
       label: "Password",
-      type: "password",
-      placeholder: this.passwordVisible,
+      type: this.passwordVisible ? "text" : "password",
+      placeholder: "Password",
     },
   ]
 
@@ -50,8 +53,11 @@ export class SignUpComponent implements OnInit{
     },
   ]
 
-
-  ngOnInit(){
-
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
   }
+
+  ngOnInit(): void {
+  }
+
 }
