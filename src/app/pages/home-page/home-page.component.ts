@@ -3,6 +3,7 @@ import {HeaderLayoutComponent} from "../../components/header-layout/header-layou
 import {ButtonComponent} from "../../components/button/button.component";
 import {SectionHeadComponent} from "../../components/section-head/section-head.component";
 import {TaskCardComponent} from "../../components/task-card/task-card.component";
+import {DatePickerComponent} from "../../components/date-picker/date-picker.component";
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +12,8 @@ import {TaskCardComponent} from "../../components/task-card/task-card.component"
     HeaderLayoutComponent,
     ButtonComponent,
     SectionHeadComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    DatePickerComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
