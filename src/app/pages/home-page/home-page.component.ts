@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import {HeaderLayoutComponent} from "../../components/header-layout/header-layout.component";
+
+@Component({
+  selector: 'app-home-page',
+  standalone: true,
+  imports: [
+    HeaderLayoutComponent
+  ],
+  templateUrl: './home-page.component.html',
+  styleUrl: './home-page.component.css'
+})
+export class HomePageComponent {
+
+}
