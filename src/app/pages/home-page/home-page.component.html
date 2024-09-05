@@ -1,5 +1,27 @@
 <div>
-  <header>
+  <header
+  >
     <app-header-layout></app-header-layout>
   </header>
+
+  <nav>
+    <div
+      class="flex justify-between p-4"
+    >
+      <select
+        class="border border-[#2970FF] rounded p-2.5 text-[#2970FF] focus:outline-[#2970FF]"
+      >
+        <option value="choose-a-date">Choose a date</option>
+        @for (date of dateFilterOption; track date){
+          <option value="{{date}}">{{date}}</option>
+        }
+      </select>
+
+      <app-button
+        [buttonName]="'Add Task'"
+        [backgroundColor]="'#fff'"
+      >
+      </app-button>
+    </div>
+  </nav>
 </div>
