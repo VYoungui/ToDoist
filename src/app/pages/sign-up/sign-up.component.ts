@@ -45,7 +45,7 @@ export class SignUpComponent implements OnInit{
   buttonProperties = [
     {
       name : "Submit",
-      backgroundColor : "#000"
+      backgroundColor : "#2970FF"
     },
     {
       name : "Cancel",
