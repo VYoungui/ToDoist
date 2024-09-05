@@ -57,6 +57,16 @@
             [arrowDirection]="sectionHeadProperties[1].arrowDirection"
             [borderColor]="sectionHeadProperties[1].borderColor"
           ></app-section-head>
+
+          <div
+            class="p-4"
+          >
+            <app-task-card
+              [taskName]="taskCardProperties[0].taskName"
+              [taskDescription]="taskCardProperties[0].taskDescription"
+              [taskDate]="taskCardProperties[0].taskDate"
+            ></app-task-card>
+          </div>
         </section>
       </div>
 

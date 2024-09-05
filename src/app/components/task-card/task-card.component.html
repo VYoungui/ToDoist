@@ -1,0 +1,73 @@
+<div
+  class="pl-3 flex gap-2 items-center"
+>
+  <div
+    class="w-4 h-4 mb-10 border-[1.5px] border-[#007AFF] bg-[#E6F2FF] rounded-full"
+  >
+
+  </div>
+  <div
+    class="flex flex-col gap-2.5 w-4/5"
+  >
+    <div
+      class="flex flex-col "
+    >
+      <span>
+        {{ taskName }}
+      </span>
+      <span
+        class="text-[#00000090] text-sm font-light"
+      >
+        {{ taskDescription }}
+      </span>
+    </div>
+
+    <div
+      class="flex items-center gap-2"
+    >
+      <lucide-icon
+        name = "calendar-days"
+        size="16px"
+      ></lucide-icon>
+
+      <span
+        class="text-xs"
+      >
+        {{ taskDate }}
+      </span>
+    </div>
+  </div>
+
+  <div
+    class="h-full flex items-center gap-4"
+  >
+   <div
+     class="h-full flex items-center"
+   >
+     <input
+       type="checkbox"
+       class="w-8 h-8 appearance-none rounded border border-black"
+       [style.display]="(checked) ? 'none' : 'block'"
+       (click)="isChecked()"
+     >
+
+     <div
+       [style.display]="(checked) ? 'block' : 'none'"
+       (click)="isChecked()"
+     >
+       <lucide-icon
+         name="check"
+         color="green"
+         size="32px"
+       ></lucide-icon>
+     </div>
+   </div>
+
+    <lucide-icon
+      name="trash-2"
+      color="red"
+      size="32px"
+    ></lucide-icon>
+  </div>
+
+</div>

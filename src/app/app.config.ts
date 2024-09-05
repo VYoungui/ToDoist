@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {LucideAngularModule, CircleUser, User, ChevronRight, ChevronDown} from "lucide-angular";
+import {LucideAngularModule, CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2} from "lucide-angular";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     importProvidersFrom(LucideAngularModule.pick({
-      CircleUser, User, ChevronRight, ChevronDown
+      CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2
     })),
   ]
 

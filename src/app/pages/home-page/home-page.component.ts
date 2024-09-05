@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HeaderLayoutComponent} from "../../components/header-layout/header-layout.component";
 import {ButtonComponent} from "../../components/button/button.component";
 import {SectionHeadComponent} from "../../components/section-head/section-head.component";
+import {TaskCardComponent} from "../../components/task-card/task-card.component";
 
 @Component({
   selector: 'app-home-page',
@@ -9,12 +10,15 @@ import {SectionHeadComponent} from "../../components/section-head/section-head.c
   imports: [
     HeaderLayoutComponent,
     ButtonComponent,
-    SectionHeadComponent
+    SectionHeadComponent,
+    TaskCardComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
 export class HomePageComponent {
+
+  taskCkecked !: boolean
 
   dateFilterOption = [
     "Today",
@@ -36,5 +40,14 @@ export class HomePageComponent {
       arrowDirection: "chevron-down",
       borderColor: "#34C759"
     },
+  ];
+
+  taskCardProperties = [
+    {
+      taskName : "Travaux Ménagés",
+      taskDescription : "Laver les assiettes, essuyer le sol, ranger la maison...",
+      taskDate : "Today, 08h:00-10h:00",
+      checked : this.taskCkecked,
+    }
   ]
 }
