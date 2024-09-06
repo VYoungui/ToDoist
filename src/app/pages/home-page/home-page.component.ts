@@ -56,7 +56,7 @@ export class HomePageComponent {
     }
   ];
 
-  opentTaskModal() {
+  openTaskModal() {
     this.router.navigate(['/createTask']);
   }
 
