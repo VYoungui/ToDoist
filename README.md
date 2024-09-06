@@ -1,9 +1,60 @@
 # ToDoist
 
 ### Design: 
-![img_3.png](img_3.png)
 ![img_2.png](img_2.png)
+![img_3.png](img_3.png) ![img_4.png](img_4.png)
 
+
+
+## Develop and design by:  ```Victoire Youngui```
+
+### Description
+Exercice Stagiaire développeur
+full Stack
+TODO-LIST
+─
+<br/>
+**I. Description**
+Une application web permettant aux utilisateurs de créer, gérer et suivre leurs
+tâches quotidiennes. Les utilisateurs doivent pouvoir ajouter, modifier, marquer
+comme terminées et supprimer des tâches. L'application doit également permettre
+de catégoriser les tâches et de définir des dates d'échéance.
+II. Fonctionnalités à implémenter :
+Ajout de tâches: Les utilisateurs doivent pouvoir ajouter des tâches avec des
+informations telles que le titre, la description, la catégorie et la date d'échéance
+(optionnelle).
+Modification de tâches: Les utilisateurs doivent pouvoir modifier les informations
+d'une tâche existante.
+Marquage comme terminée: Les utilisateurs doivent pouvoir marquer une tâche
+comme terminée.
+Suppression de tâches: Les utilisateurs doivent pouvoir supprimer une tâche.
+Catégorisation: Les utilisateurs doivent pouvoir assigner une catégorie à chaque
+tâche (par exemple : Travail, Personnel, Études).
+Filtrage et tri: Les utilisateurs doivent pouvoir filtrer les tâches par catégorie et les
+trier par date d'échéance ou par ordre alphabétique.
+Interface utilisateur responsive: L'application doit s'adapter à différentes tailles
+d'écran (ordinateur, tablette, téléphone).
+Stockage des données: Les données doivent être stockées localement dans le
+navigateur (par exemple en utilisant LocalStorage) ou sur un serveur si vous le
+souhaitez.
+Bonus: Implémentation de fonctionnalités supplémentaires telles que :
+➔ Rappels pour les tâches avec date d'échéance.
+➔ Possibilité de partager des listes de tâches avec d'autres utilisateurs.
+➔ Utilisation d'un framework JavaScript moderne (React, Angular ou Vue.js)
+ou d'une bibliothèque de composants (comme Material-UI ou Bootstrap)
+pour le front-end.
+➔ Mise en place d'une API RESTful avec Node.js et Express.js pour le
+back-end.
+➔ Utilisation d'une base de données (MongoDB ou PostgreSQL).
+➔ Implémentation de l'authentification (JWT recommandé).
+III. Critères d'évaluation :
+➔ Respect des spécifications
+➔ Qualité du code (lisibilité, modularité, commentaires)
+➔ Respect des bonnes pratiques (DRY, SOLID, KISS, Clean Code, ...)
+➔ Gestion des erreurs
+➔ Fonctionnalités bonus implémentées
+➔ Utilisation d'un framework ou d'une bibliothèque (bonus)
+➔ Design et expérience utilisateur
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
 
