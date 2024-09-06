@@ -3,7 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {LucideAngularModule, CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2} from "lucide-angular";
+import {LucideAngularModule, CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check,
+        Trash2, X}
+  from "lucide-angular";
 import {provideNativeDateAdapter} from "@angular/material/core";
 
 export const appConfig: ApplicationConfig = {
@@ -13,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideNativeDateAdapter(),
     importProvidersFrom(LucideAngularModule.pick({
-      CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2
+      CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2, X
     })),
   ]
 

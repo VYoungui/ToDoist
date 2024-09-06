@@ -1,0 +1,63 @@
+<main
+  class="w-full h-lvh absolute bg-[#00000030] flex gap-2 flex-col items-center justify-center"
+>
+  <div
+    class="w-3/4 flex justify-end pr-6"
+  >
+    <lucide-icon
+      name="X"
+      size="28px"
+      class="hover:cursor-pointer hover:bg-red-500 hover:text-white rounded"
+      (click)="closeModal()"
+    ></lucide-icon>
+  </div>
+
+  <div
+    class="w-3/4 bg-white rounded-2xl flex gap-6 justify-between p-12 items-center h-[32rem]"
+  >
+    <aside
+      class="w-2/3 flex flex-col gap-5">
+      <p
+        class="text-lg font-semibold text-center"
+      >
+        Add a new task to do...
+      </p>
+
+      <div
+        class="flex flex-col gap-6"
+      >
+        <app-input-field
+          [label] = "'Task Name'"
+          [inputPlaceholder]="'Name'"
+          [inputType]="'text'"
+        ></app-input-field>
+
+        <label
+          class="flex flex-col"
+        >
+          Description
+          <textarea name="" id="" cols="10" rows="5"
+                    class="border border-slate-400 w-72 max-h-64 rounded p-1 pl-2"
+                    placeholder="Description"
+          ></textarea>
+        </label>
+      </div>
+
+      <div
+        class="flex w-full justify-end gap-10 h-16 items-end"
+      >
+        @for (prop of buttonProperties; track prop.name){
+          <app-button
+            [buttonName]="prop.name"
+            [backgroundColor]= "prop.backgroundColor"
+          ></app-button>
+        }
+      </div>
+    </aside>
+
+    <aside>
+      <app-date-picker></app-date-picker>
+    </aside>
+  </div>
+</main>
+
