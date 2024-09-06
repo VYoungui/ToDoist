@@ -20,6 +20,7 @@
       <app-button
         [buttonName]="'Add Task'"
         [backgroundColor]="'#fff'"
+        (click)="opentTaskModal()"
       >
       </app-button>
     </div>
@@ -77,5 +78,8 @@
     >
       <app-date-picker></app-date-picker>
     </aside>
+
+      <app-add-task-modal></app-add-task-modal>
+
   </main>
 </div>

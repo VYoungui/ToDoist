@@ -13,4 +13,10 @@ export const routes: Routes = [
     path: 'home',
     loadComponent: () => import('./pages/home-page/home-page.component').then(m => m.HomePageComponent)
   },
+
+  {
+    path: 'createTask',
+      loadComponent: () => import('./components/add-task-modal/add-task-modal.component').then(m => m.AddTaskModalComponent)
+  },
+
 ];
