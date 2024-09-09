@@ -4,6 +4,9 @@ import {LucideAngularModule} from "lucide-angular";
 import {InputFieldComponent} from "../../components/input-field/input-field.component";
 import {ButtonComponent} from "../../components/button/button.component";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {UsersModel} from "../../models/users.model";
+import {UsersService} from "../../services/users.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up',
@@ -15,49 +18,52 @@ import {RouterLink, RouterOutlet} from "@angular/router";
     ButtonComponent,
     RouterOutlet,
     RouterLink,
+    FormsModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
 
-  passwordVisible !: boolean
+  passwordVisible !: boolean;
+  inputFieldsProperties !: UsersModel[];
 
-  inputFieldsProperties = [
-    {
-      label: "Name",
-      type: "text",
-      placeholder: "Name",
-    },
 
-    {
-      label: "Email",
-      type: "email",
-      placeholder: "Email",
-    },
-    {
-      label: "Password",
-      type: this.passwordVisible ? "text" : "password",
-      placeholder: "Password",
-    },
-  ]
-
-  buttonProperties = [
-    {
-      name : "Submit",
-      backgroundColor : "#2970FF"
-    },
-    {
-      name : "Cancel",
-      backgroundColor : "#fff"
-    },
-  ]
+  buttonProperties = {
+    name : "Sign Up",
+    backgroundColor : "#2970FF"
+  }
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
 
+
+  constructor(
+    private inputFieldsPropService : UsersService
+  ) {
+
+  }
+
+  onChildValueChange(newValue: string) {
+    console.log('Nouvelle valeur de l\'enfant :', newValue);
+  }
+
   ngOnInit(): void {
+    this.inputFieldsProperties = this.inputFieldsPropService.logInFields
+  }
+
+  OnSubmit(){
+    console.log("Formulaire soumit");
+    console.log(this.inputFieldsProperties)
+    const userData = {
+      email: this.inputFieldsProperties[0].value,
+      password: this.inputFieldsProperties[1].value,
+    };
+
+    this.inputFieldsPropService.logIn(userData).subscribe()
   }
 
 }
+
+

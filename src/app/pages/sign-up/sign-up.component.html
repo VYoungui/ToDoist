@@ -48,28 +48,31 @@
             [label] = "prop.label"
             [inputPlaceholder]="prop.placeholder"
             [inputType]="prop.type"
+            [input]="prop"
           ></app-input-field>
         }
       </div>
       <div
-        class="flex justify-between gap-10"
+        class="flex justify-center w-full "
       >
-        @for (prop of buttonProperties; track prop.name){
-          <app-button
-            [buttonName]="prop.name"
-            [backgroundColor]= "prop.backgroundColor"
-          ></app-button>
-        }
+        <app-button
+          [buttonName]="buttonProperties.name"
+          [backgroundColor]= "buttonProperties.backgroundColor"
+          (click)="OnSubmit()"
+        ></app-button>
+
+
       </div>
       <span
         class="text-sm w-full flex justify-end"
       >
-        Already have an account?
+        Don't have an account?
         <a
-          routerLink="/sign-in"
+          routerLink="/login"
           class="text-blue-700 font-semibold"
-        > Sign in here. </a>
+        >Login here. </a>
       </span>
     </div>
   </aside>
 </div>
+

@@ -7,6 +7,8 @@ import {LucideAngularModule, CircleUser, User, ChevronRight, ChevronDown, Calend
         Trash2, X}
   from "lucide-angular";
 import {provideNativeDateAdapter} from "@angular/material/core";
+import {HttpClientModule} from "@angular/common/http";
+import {provideClientHydration} from "@angular/platform-browser";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +19,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(LucideAngularModule.pick({
       CircleUser, User, ChevronRight, ChevronDown, CalendarDays, Check, Trash2, X
     })),
+    provideClientHydration(),
+    importProvidersFrom(HttpClientModule)
   ]
 
 };
