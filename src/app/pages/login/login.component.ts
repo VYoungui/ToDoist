@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.inputFieldsProperties = this.inputFieldsPropService.signUpFields
+    this.inputFieldsProperties = this.inputFieldsPropService.logInFields
   }
 
   OnSubmit(){
@@ -39,12 +39,11 @@ export class LoginComponent implements OnInit{
 
 
     const userData = {
-      name: this.inputFieldsProperties[0].value,
-      email: this.inputFieldsProperties[1].value,
-      password: this.inputFieldsProperties[2].value
+      email: this.inputFieldsProperties[0].value,
+      password: this.inputFieldsProperties[1].value,
     };
 
-    this.inputFieldsPropService.signUp(userData).subscribe()
+    this.inputFieldsPropService.logIn(userData).subscribe()
   }
 
 }

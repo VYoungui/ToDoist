@@ -50,18 +50,19 @@ export class SignUpComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.inputFieldsProperties = this.inputFieldsPropService.logInFields
+    this.inputFieldsProperties = this.inputFieldsPropService.signUpFields
   }
 
   OnSubmit(){
     console.log("Formulaire soumit");
     console.log(this.inputFieldsProperties)
     const userData = {
-      email: this.inputFieldsProperties[0].value,
-      password: this.inputFieldsProperties[1].value,
+      name: this.inputFieldsProperties[0].value,
+      email: this.inputFieldsProperties[1].value,
+      password: this.inputFieldsProperties[2].value
     };
 
-    this.inputFieldsPropService.logIn(userData).subscribe()
+    this.inputFieldsPropService.signUp(userData).subscribe()
   }
 
 }

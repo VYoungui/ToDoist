@@ -19,7 +19,7 @@ export class UsersService {
 
   logIn(data: any): Observable<any>{
     return new Observable((observer)=>{
-      this.http.post(`${this.apiUrl}/user`, data).subscribe((result: any)=>{
+      this.http.post(`${this.apiUrl}/user/login`, data).subscribe((result: any)=>{
           console.log("Le résultat de la requête:", result, "et son status:", result.status);
           this.router.navigateByUrl('/home').then(r => console.log(r))
           observer.next(result)
@@ -31,6 +31,7 @@ export class UsersService {
       )
     })
   }
+
   signUp(data: any): Observable<any>{
     return new Observable((observer)=>{
       console.log("Sign up:",data)
@@ -48,7 +49,7 @@ export class UsersService {
     })
   }
 
-  logInFields : UsersModel[] =[
+  signUpFields : UsersModel[] =[
     {
       label: "Name",
       type: "text",
@@ -69,7 +70,7 @@ export class UsersService {
     },
   ];
 
-  signUpFields : UsersModel[] = [
+  logInFields : UsersModel[] = [
     {
       label: "Email",
       type: "email",
