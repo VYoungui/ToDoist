@@ -17,5 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
 })
 export class DatePickerComponent {
+
   selected = model<Date | null>(null);
+
 }

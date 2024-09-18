@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderLayoutComponent} from "../../components/header-layout/header-layout.component";
 import {ButtonComponent} from "../../components/button/button.component";
 import {SectionHeadComponent} from "../../components/section-head/section-head.component";
@@ -6,6 +6,9 @@ import {TaskCardComponent} from "../../components/task-card/task-card.component"
 import {DatePickerComponent} from "../../components/date-picker/date-picker.component";
 import {AddTaskModalComponent} from "../../components/add-task-modal/add-task-modal.component";
 import {Router} from "@angular/router";
+import {UsersService} from "../../services/users.service";
+import {TasksService} from "../../services/tasks.service";
+import {TasksModel} from "../../models/tasks.model";
 
 @Component({
   selector: 'app-home-page',
@@ -21,7 +24,7 @@ import {Router} from "@angular/router";
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit{
 
   taskCkecked !: boolean
 
@@ -47,18 +50,23 @@ export class HomePageComponent {
     },
   ];
 
-  taskCardProperties = [
-    {
-      taskName : "Travaux Ménagés",
-      taskDescription : "Laver les assiettes, essuyer le sol, ranger la maison...",
-      taskDate : "Today, 08h:00-10h:00",
-      checked : this.taskCkecked,
-    }
-  ];
+  taskCardProperties : TasksModel[] = []
 
   openTaskModal() {
     this.router.navigate(['/createTask']);
   }
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private taskCardService : TasksService
+  ) {}
+
+  ngOnInit(): void {
+   this.taskCardService.fetchTasks().subscribe(
+     data => {
+       console.log(data)
+       this.taskCardProperties = data
+     }
+   )
+  }
 }

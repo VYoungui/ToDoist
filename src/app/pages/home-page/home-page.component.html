@@ -60,13 +60,16 @@
           ></app-section-head>
 
           <div
-            class="p-4"
+            class="p-4 flex flex-col gap-4"
           >
-            <app-task-card
-              [taskName]="taskCardProperties[0].taskName"
-              [taskDescription]="taskCardProperties[0].taskDescription"
-              [taskDate]="taskCardProperties[0].taskDate"
-            ></app-task-card>
+            @for (task of taskCardProperties; track task.name){
+              <app-task-card
+                [taskName]="task.name"
+                [taskDescription]="task.description"
+                [taskDate]="task.date"
+              ></app-task-card>
+            }
+
           </div>
         </section>
       </div>
