@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {UsersModel} from "../models/users.model";
+import {InputFieldModel} from "../models/input-field.model";
 import {SessionStorageService} from "./session-storage.service";
 import {environment} from "../environment/environment";
 
@@ -62,7 +62,7 @@ export class UsersService {
   }
 
 
-  signUpFields : UsersModel[] =[
+  signUpFields : InputFieldModel[] =[
     {
       label: "Name",
       type: "text",
@@ -83,7 +83,7 @@ export class UsersService {
     },
   ];
 
-  logInFields : UsersModel[] = [
+  logInFields : InputFieldModel[] = [
     {
       label: "Email",
       type: "email",

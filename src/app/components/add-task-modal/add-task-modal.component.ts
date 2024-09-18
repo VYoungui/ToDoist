@@ -4,9 +4,10 @@ import {DatePickerComponent} from "../date-picker/date-picker.component";
 import {ButtonComponent} from "../button/button.component";
 import {LucideAngularModule} from "lucide-angular";
 import {Router} from "@angular/router";
-import {UsersModel} from "../../models/users.model";
+import {InputFieldModel} from "../../models/input-field.model";
 import {TasksService} from "../../services/tasks.service";
 import {FormsModule} from "@angular/forms";
+import {TasksModel} from "../../models/tasks.model";
 
 @Component({
   selector: 'app-add-task-modal',
@@ -36,27 +37,10 @@ export class AddTaskModalComponent implements OnInit{
     },
   ]
 
-  inputFieldsProperties !: UsersModel
+  inputFieldsProperties !: InputFieldModel
 
   closeModal() {
     this.router.navigate(['/home']);
-  }
-
-  OnSubmit(){
-    console.log("Formulaire soumit");
-    console.log(this.inputFieldsProperties, this.textareaValue)
-
-
-    const taskData = {
-      title: this.inputFieldsProperties.value,
-      description: this.textareaValue,
-      state :``,
-      user_id: 1,
-      date  : new Date()
-
-    };
-
-    this.inputFieldsPropService.createTask(taskData).subscribe()
   }
 
   constructor(
@@ -64,8 +48,34 @@ export class AddTaskModalComponent implements OnInit{
     private inputFieldsPropService : TasksService
   ) {}
 
+  OnSubmit(){
+    console.log("Formulaire soumit");
+    console.log(this.inputFieldsProperties, this.textareaValue)
+
+
+    const taskData : TasksModel = {
+      name: this.inputFieldsProperties.value,
+      description: this.textareaValue,
+      state : true,
+      user_id: 1,
+      date  : "2022-11-23"
+
+    };
+
+    this.inputFieldsPropService.createTask(taskData).subscribe({
+      next: (data) => {
+        console.log(data)
+        this.router.navigateByUrl('/home').then(r => console.log("don't know!", r))
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
+
   ngOnInit(): void {
     this.inputFieldsProperties = this.inputFieldsPropService.taskProperties
+
   }
 
 

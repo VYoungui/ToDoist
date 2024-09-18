@@ -1,4 +1,4 @@
-export class UsersModel {
+export class InputFieldModel {
   label: string = ''
   type: string = ''
   placeholder: string = ''

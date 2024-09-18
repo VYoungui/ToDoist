@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
-import {UsersModel} from "../../models/users.model";
+import {InputFieldModel} from "../../models/input-field.model";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -16,7 +16,7 @@ export class InputFieldComponent implements OnInit{
   @Input() inputType !: any
   @Input() inputPlaceholder : string = ''
   @Input() passwordVisible = false;
-  @Input() input !: UsersModel
+  @Input() input !: InputFieldModel
   @Output() valueChange = new EventEmitter<string>()
 
   constructor(private el: ElementRef) {}

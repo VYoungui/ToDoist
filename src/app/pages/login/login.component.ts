@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {InputFieldComponent} from "../../components/input-field/input-field.component";
 import {ButtonComponent} from "../../components/button/button.component";
 import {RouterLink} from "@angular/router";
-import {UsersModel} from "../../models/users.model";
+import {InputFieldModel} from "../../models/input-field.model";
 import {UsersService} from "../../services/users.service";
 
 @Component({
@@ -18,7 +18,7 @@ import {UsersService} from "../../services/users.service";
 })
 export class LoginComponent implements OnInit{
 
-  inputFieldsProperties !: UsersModel[]
+  inputFieldsProperties !: InputFieldModel[]
 
   buttonProperties = {
     name : "Login",

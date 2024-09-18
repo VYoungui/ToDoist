@@ -4,7 +4,7 @@ import {LucideAngularModule} from "lucide-angular";
 import {InputFieldComponent} from "../../components/input-field/input-field.component";
 import {ButtonComponent} from "../../components/button/button.component";
 import {RouterLink, RouterOutlet} from "@angular/router";
-import {UsersModel} from "../../models/users.model";
+import {InputFieldModel} from "../../models/input-field.model";
 import {UsersService} from "../../services/users.service";
 import {FormsModule} from "@angular/forms";
 
@@ -26,7 +26,7 @@ import {FormsModule} from "@angular/forms";
 export class SignUpComponent implements OnInit{
 
   passwordVisible !: boolean;
-  inputFieldsProperties !: UsersModel[];
+  inputFieldsProperties !: InputFieldModel[];
 
 
   buttonProperties = {

@@ -25,7 +25,7 @@ import {TasksModel} from "../../models/tasks.model";
 })
 export class HomePageComponent implements OnInit{
 
-  taskCkecked !: boolean
+
 
   dateFilterOption = [
     "Today",
