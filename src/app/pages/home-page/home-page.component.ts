@@ -6,7 +6,6 @@ import {TaskCardComponent} from "../../components/task-card/task-card.component"
 import {DatePickerComponent} from "../../components/date-picker/date-picker.component";
 import {AddTaskModalComponent} from "../../components/add-task-modal/add-task-modal.component";
 import {Router} from "@angular/router";
-import {UsersService} from "../../services/users.service";
 import {TasksService} from "../../services/tasks.service";
 import {TasksModel} from "../../models/tasks.model";
 
