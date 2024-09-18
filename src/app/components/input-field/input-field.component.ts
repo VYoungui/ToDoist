@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {InputFieldModel} from "../../models/input-field.model";
 import {FormsModule} from "@angular/forms";
 
@@ -19,18 +19,6 @@ export class InputFieldComponent implements OnInit{
   @Input() input !: InputFieldModel
   @Output() valueChange = new EventEmitter<string>()
 
-  constructor(private el: ElementRef) {}
-
-/*  @HostListener('click', ['$event']) onClick(event: Event) {
-    event.stopPropagation(); // Prevent the click from propagating to the parent
-    this.passwordVisible = !this.passwordVisible;
-    const input = this.el.nativeElement as HTMLInputElement;
-    input.type = this.passwordVisible ? 'text' : 'password';
-  }*/
-
-  // onValueChange() {
-  //   this.valueChange.emit(this.value)
-  // }
 
   ngOnInit() {
 
